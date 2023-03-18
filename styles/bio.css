@@ -18,11 +18,26 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #323232;
   padding-top: 1rem;
 }
+@media (min-width: 768px) {
+  .site-header {
+    padding: 0rem 2rem;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
 .site-header__nav {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #323232;
+}
+@media (min-width: 768px) {
+  .site-header__nav {
+    flex-direction: row;
+    width: auto;
+    -moz-column-gap: 4em;
+         column-gap: 4em;
+  }
 }
 .site-header__logo {
   width: 9rem;
@@ -34,10 +49,20 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .site-header__nav-list {
+    width: auto;
+  }
+}
 .site-header__nav-item {
   width: 100%;
   text-align: center;
   padding: 0.7rem 0;
+}
+@media (min-width: 768px) {
+  .site-header__nav-item {
+    margin-right: 4rem;
+  }
 }
 .site-header__nav-link {
   color: #F2F0E6;
@@ -76,6 +101,11 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
 }
+@media (min-width: 768px) {
+  .about__wrapper {
+    display: flex;
+  }
+}
 .about__title {
   text-transform: capitalize;
 }
@@ -100,9 +130,21 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
 }
+@media (min-width: 768px) {
+  .gallery__wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .gallery__photo {
   width: 80vw;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .gallery__photo {
+    width: 30%;
+    padding: 1rem 1rem;
+  }
 }
 
 .footer {
@@ -112,6 +154,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   padding-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .footer__wrapper {
+    flex-direction: row;
+  }
 }
 .footer__sub-wrapper-top-text {
   color: #ffffff;
@@ -149,6 +196,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 9rem;
   margin-top: 4.5rem;
   margin-left: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    display: none;
+  }
 }
 .footer__copyright-text {
   color: #F2F0E6;

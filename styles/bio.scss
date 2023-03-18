@@ -19,11 +19,25 @@ h1, h2, h3, h4, h5, h6 {
     background-color: variables.$bandsite-black;
     padding-top: 1rem;
 
+    @include mixins.tablet {
+        padding: 0rem 2rem;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
     &__nav {
         display: flex;
         flex-direction: column;
         align-items: center;
         background-color: variables.$bandsite-black;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            width: auto;
+            column-gap: 4em;
+            
+        }
+        
     }
 
     &__logo {
@@ -37,7 +51,10 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         justify-content: center;
         align-items: center;
-       
+
+        @include mixins.tablet {
+            width: auto;
+        }
     }
 
 
@@ -45,6 +62,10 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         text-align: center;
         padding: 0.7rem 0;
+
+        @include mixins.tablet {
+            margin-right: 4rem;
+        }
     }
 
     &__nav-link {
@@ -89,6 +110,12 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     justify-content: center;
 
+    &__wrapper {
+        @include mixins.tablet {
+            display: flex;
+        }
+    }
+
     &__title {
         text-transform: capitalize;
     }
@@ -117,11 +144,21 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 
     &__photo {
         width: 80vw;
         padding-bottom: 1rem;
+
+        @include mixins.tablet {
+            width: 30%;
+            padding: 1rem 1rem;
+        }
     }
 }
 
@@ -133,6 +170,10 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     padding-bottom: 16px;
+
+    @include mixins.tablet {
+        flex-direction: row;
+    }
         }
 
     &__sub-wrapper-top-text {
@@ -186,6 +227,10 @@ h1, h2, h3, h4, h5, h6 {
         width: 9rem;
         margin-top: 4.5rem;
         margin-left: 1rem;
+
+        @include mixins.tablet {
+            display: none;
+        }
     }
 
     &__copyright-text {

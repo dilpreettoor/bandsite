@@ -1,0 +1,187 @@
+@use "./partials/mixins";
+@use "./partials/variables";
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: variables.$font-family;
+    text-decoration: none;
+}
+
+.site-header {
+    background-color: variables.$bandsite-black;
+    padding-top: 1rem;
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: variables.$bandsite-black;
+    }
+
+    &__logo {
+        width: 9rem;
+    }
+
+
+    &__nav-list {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+
+    &__nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 0;
+    }
+
+    &__nav-link {
+        color: variables.$alabaster;
+    }
+
+}
+
+.active {
+    border-bottom: 4px solid variables.$white;
+}
+
+
+
+.hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+    height: 32vh;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__title {
+        color: variables.$white;
+        text-transform: capitalize;
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title {
+        text-transform: capitalize;
+    }
+
+    &__image {
+        width: 90%;
+        margin: auto;
+        aspect-ratio: 16 / 9;
+        padding-bottom: 1rem;
+    }
+
+    &__quote {
+        padding: 0.25rem 1rem;
+        line-height: 1.5rem;
+    }
+
+    &__text {
+        padding: 0.25rem 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.gallery {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__photo {
+        width: 80vw;
+        padding-bottom: 1rem;
+    }
+}
+
+.footer {
+
+    background-color: variables.$bandsite-black;
+
+    &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+        }
+
+    &__sub-wrapper-top-text {
+        color: variables.$white;
+        
+    }
+
+    &__sub-wrapper-middle-text {
+        color: variables.$alabaster;
+        
+    }
+
+    &__sub-wrapper-bottom-text {
+        color: variables.$alabaster;
+    }
+
+    &__sub-wrapper-top {
+        padding: 0.25rem 1rem;
+    }
+
+    &__sub-wrapper-middle {
+        padding: 1.25rem 1rem;
+    }
+
+    &__sub-wrapper-bottom {
+        padding: 0.25rem 1rem;
+    }
+
+
+    &__sub-wrapper {
+        
+    }
+
+    &__social {
+        display: flex;
+        column-gap: 2rem;
+        padding: 1rem 1rem;
+    }
+
+    &__title {
+        text-transform: capitalize;
+        color: variables.$white;
+    }
+
+    &__social-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__logo {
+        width: 9rem;
+        margin-top: 4.5rem;
+        margin-left: 1rem;
+    }
+
+    &__copyright-text {
+        color: variables.$alabaster;
+        padding: 1rem 1rem;
+    }
+}
+
+
+

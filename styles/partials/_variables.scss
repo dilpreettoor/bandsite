@@ -1,0 +1,24 @@
+//colors
+$bandsite-black: #323232;
+$silver: #AFAFAF;
+$white: #ffffff;
+$bandsite-darkblack: #000000;
+$mercury: #E1E1E1;
+$alabaster: #F2F0E6;
+
+
+
+
+
+
+// screen sizes
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+// font face
+@font-face {
+    font-family: 'AvenirNext';
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff2"),
+         url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff");
+}
+$font-family: 'AvenirBold', Arial, Helvetica, sans-serif;

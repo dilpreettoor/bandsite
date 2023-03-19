@@ -1,6 +1,17 @@
 @font-face {
-  font-family: "AvenirNext";
+  font-family: "AvenirNextBold";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "AvenirNextRegular";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "AvenirNextDemi";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff");
+  font-weight: 600;
 }
 h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem 1rem 1rem 1rem;
@@ -10,7 +21,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "AvenirBold", Arial, Helvetica, sans-serif;
   text-decoration: none;
 }
 
@@ -37,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
     width: auto;
     -moz-column-gap: 4em;
          column-gap: 4em;
+    height: 10vh;
   }
 }
 .site-header__logo {
@@ -62,14 +73,20 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .site-header__nav-item {
     margin-right: 4rem;
+    padding: 2.3rem 0;
   }
 }
 .site-header__nav-link {
-  color: #F2F0E6;
+  color: #ffffff;
+  font-family: AvenirNextDemi, sans-serif;
 }
 
 .active {
   border-bottom: 4px solid #ffffff;
+}
+
+.inactive {
+  color: #E1E1E1;
 }
 
 .hero {
@@ -80,10 +97,21 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .hero {
+    height: 65vh;
+  }
+}
 .hero__title {
   color: #ffffff;
   text-transform: capitalize;
   z-index: 1;
+  font-family: AvenirNextDemi, sans-serif;
+}
+@media (min-width: 768px) {
+  .hero__title {
+    font-size: 3.8rem;
+  }
 }
 
 .hero::before {
@@ -108,6 +136,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .about__title {
   text-transform: capitalize;
+  font-size: 1.85rem;
+  font-family: AvenirNextDemi, sans-serif;
+}
+@media (min-width: 768px) {
+  .about__title {
+    font-size: 2.125rem;
+  }
 }
 .about__image {
   width: 90%;
@@ -118,12 +153,21 @@ h1, h2, h3, h4, h5, h6 {
 .about__quote {
   padding: 0.25rem 1rem;
   line-height: 1.5rem;
+  font-size: 1.1rem;
+  font-family: AvenirNextDemi, sans-serif;
+}
+.about__subtitle {
+  font-family: AvenirNextDemi, sans-serif;
 }
 .about__text {
   padding: 0.25rem 1rem;
   line-height: 1.5rem;
+  font-family: AvenirNextRegular, sans-serif;
 }
 
+.gallery {
+  background-color: #FAFAFA;
+}
 .gallery__wrapper {
   display: flex;
   flex-direction: column;
@@ -146,28 +190,37 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem 1rem;
   }
 }
+.gallery__title {
+  font-family: AvenirNextDemi, sans-serif;
+}
 
 .footer {
   background-color: #323232;
+  padding: 1rem;
 }
 .footer__wrapper {
   display: flex;
   flex-direction: column;
   padding-bottom: 16px;
+  position: relative;
 }
 @media (min-width: 768px) {
   .footer__wrapper {
     flex-direction: row;
+    align-items: center;
   }
 }
 .footer__sub-wrapper-top-text {
   color: #ffffff;
+  font-family: AvenirNextDemi, sans-serif;
 }
 .footer__sub-wrapper-middle-text {
-  color: #F2F0E6;
+  color: #FAFAFA;
+  font-family: AvenirNextRegular, sans-serif;
 }
 .footer__sub-wrapper-bottom-text {
-  color: #F2F0E6;
+  color: #FAFAFA;
+  font-family: AvenirNextRegular, sans-serif;
 }
 .footer__sub-wrapper-top {
   padding: 0.25rem 1rem;
@@ -187,6 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 .footer__title {
   text-transform: capitalize;
   color: #ffffff;
+  font-family: AvenirNextBold, sans-serif;
 }
 .footer__social-icon {
   width: 2rem;
@@ -202,7 +256,20 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
+.footer__top-logo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer__top-logo {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.5rem;
+  }
+}
 .footer__copyright-text {
-  color: #F2F0E6;
+  color: #FAFAFA;
   padding: 1rem 1rem;
+  font-family: AvenirNextRegular, sans-serif;
 }/*# sourceMappingURL=bio.css.map */

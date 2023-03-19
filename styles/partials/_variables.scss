@@ -4,7 +4,7 @@ $silver: #AFAFAF;
 $white: #ffffff;
 $bandsite-darkblack: #000000;
 $mercury: #E1E1E1;
-$alabaster: #F2F0E6;
+$alabaster: #FAFAFA;
 
 
 
@@ -17,8 +17,23 @@ $desktop-width: 1280px;
 
 // font face
 @font-face {
-    font-family: 'AvenirNext';
+    font-family: 'AvenirNextBold';
     src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff2"),
          url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff");
+         font-weight: 700;
 }
-$font-family: 'AvenirBold', Arial, Helvetica, sans-serif;
+
+
+@font-face {
+    font-family: "AvenirNextRegular";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff2"),
+         url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "AvenirNextDemi";
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff2"),
+         url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff");
+    font-weight: 600;
+}

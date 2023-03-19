@@ -11,3 +11,7 @@
       @content;
     }
   }
+
+  @mixin font($family){
+    font-family: $family, sans-serif;
+}

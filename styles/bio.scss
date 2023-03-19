@@ -11,7 +11,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: variables.$font-family;
     text-decoration: none;
 }
 
@@ -23,6 +22,7 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0rem 2rem;
         flex-direction: row;
         justify-content: flex-start;
+        
     }
 
     &__nav {
@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
             flex-direction: row;
             width: auto;
             column-gap: 4em;
+            height: 10vh;
             
         }
         
@@ -65,11 +66,13 @@ h1, h2, h3, h4, h5, h6 {
 
         @include mixins.tablet {
             margin-right: 4rem;
+            padding: 2.3rem 0;
         }
     }
 
     &__nav-link {
-        color: variables.$alabaster;
+        color:variables.$white;
+        @include mixins.font(AvenirNextDemi);
     }
 
 }
@@ -77,6 +80,13 @@ h1, h2, h3, h4, h5, h6 {
 .active {
     border-bottom: 4px solid variables.$white;
 }
+
+.inactive {
+    color: variables.$mercury;
+}
+
+
+
 
 
 
@@ -88,10 +98,20 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
 
+    @include mixins.tablet {
+        height: 65vh;
+    }
+
     &__title {
         color: variables.$white;
         text-transform: capitalize;
         z-index: 1;
+
+        @include mixins.font(AvenirNextDemi);
+
+        @include mixins.tablet {
+            font-size: 3.8rem;
+        }
     }
 }
 
@@ -118,6 +138,13 @@ h1, h2, h3, h4, h5, h6 {
 
     &__title {
         text-transform: capitalize;
+        font-size: 1.85rem;
+
+        @include mixins.font(AvenirNextDemi);
+
+        @include mixins.tablet {
+            font-size: 2.125rem;
+        }
     }
 
     &__image {
@@ -130,15 +157,26 @@ h1, h2, h3, h4, h5, h6 {
     &__quote {
         padding: 0.25rem 1rem;
         line-height: 1.5rem;
+        font-size: 1.1rem;
+
+
+        @include mixins.font(AvenirNextDemi);
+    }
+
+    &__subtitle {
+        @include mixins.font(AvenirNextDemi);
     }
 
     &__text {
         padding: 0.25rem 1rem;
         line-height: 1.5rem;
+
+        @include mixins.font(AvenirNextRegular);
     }
 }
 
 .gallery {
+    background-color: variables.$alabaster;
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -160,34 +198,44 @@ h1, h2, h3, h4, h5, h6 {
             padding: 1rem 1rem;
         }
     }
+
+    &__title {
+        @include mixins.font(AvenirNextDemi);
+    }
 }
 
 .footer {
 
     background-color: variables.$bandsite-black;
+    padding: 1rem;
 
     &__wrapper {
     display: flex;
     flex-direction: column;
     padding-bottom: 16px;
+    position: relative;
 
     @include mixins.tablet {
         flex-direction: row;
+        align-items: center;
     }
         }
 
     &__sub-wrapper-top-text {
         color: variables.$white;
+        @include mixins.font(AvenirNextDemi);
         
     }
 
     &__sub-wrapper-middle-text {
         color: variables.$alabaster;
+        @include mixins.font(AvenirNextRegular);
         
     }
 
     &__sub-wrapper-bottom-text {
         color: variables.$alabaster;
+        @include mixins.font(AvenirNextRegular);
     }
 
     &__sub-wrapper-top {
@@ -203,10 +251,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
 
-    &__sub-wrapper {
-        
-    }
-
     &__social {
         display: flex;
         column-gap: 2rem;
@@ -216,6 +260,7 @@ h1, h2, h3, h4, h5, h6 {
     &__title {
         text-transform: capitalize;
         color: variables.$white;
+        @include mixins.font(AvenirNextBold);
     }
 
     &__social-icon {
@@ -233,9 +278,23 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
+    &__top-logo {
+        display: none;
+
+        @include mixins.tablet {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.5rem;
+
+        }
+    }
+
     &__copyright-text {
         color: variables.$alabaster;
         padding: 1rem 1rem;
+        @include mixins.font(AvenirNextRegular);
     }
 }
 

@@ -3,6 +3,10 @@
 
 h1, h2, h3, h4, h5, h6 {
     padding: 1.5rem 1rem 1rem 1rem;
+
+    @include mixins.tablet {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+    }
   }
 
 
@@ -66,8 +70,12 @@ h1, h2, h3, h4, h5, h6 {
 
         @include mixins.tablet {
             margin-right: 4rem;
-            padding: 2.3rem 0;
+            padding: 2.1rem 0;
         }
+    }
+
+    &__nav-item:hover {
+        border-bottom: 4px solid variables.$white;
     }
 
     &__nav-link {
@@ -92,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero {
     background-image: url("../assets/images/hero-bio.jpg");
-    height: 32vh;
+    height: 38vh;
     background-size: cover;
     position: relative;
     display: flex;
@@ -100,6 +108,10 @@ h1, h2, h3, h4, h5, h6 {
 
     @include mixins.tablet {
         height: 65vh;
+    }
+
+    @include mixins.tablet {
+        height: 70vh;
     }
 
     &__title {
@@ -159,8 +171,28 @@ h1, h2, h3, h4, h5, h6 {
         line-height: 1.5rem;
         font-size: 1.1rem;
 
-
         @include mixins.font(AvenirNextDemi);
+
+        @include mixins.tablet {
+            font-size: 1.35rem;
+        }
+
+        
+            
+        }
+
+
+    &__quote--author {
+        padding: 0.25rem 1rem;
+       line-height: 1.5rem;
+       font-size: 1rem;
+
+       @include mixins.font(AvenirNextDemi);
+
+       @include mixins.tablet {
+        font-size: 1.12rem;
+    }
+
     }
 
     &__subtitle {

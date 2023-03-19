@@ -16,6 +16,11 @@
 h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem 1rem 1rem 1rem;
 }
+@media (min-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+}
 
 * {
   margin: 0;
@@ -73,8 +78,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .site-header__nav-item {
     margin-right: 4rem;
-    padding: 2.3rem 0;
+    padding: 2.1rem 0;
   }
+}
+.site-header__nav-item:hover {
+  border-bottom: 4px solid #ffffff;
 }
 .site-header__nav-link {
   color: #ffffff;
@@ -91,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero {
   background-image: url("../assets/images/hero-bio.jpg");
-  height: 32vh;
+  height: 38vh;
   background-size: cover;
   position: relative;
   display: flex;
@@ -100,6 +108,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .hero {
     height: 65vh;
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 70vh;
   }
 }
 .hero__title {
@@ -155,6 +168,22 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5rem;
   font-size: 1.1rem;
   font-family: AvenirNextDemi, sans-serif;
+}
+@media (min-width: 768px) {
+  .about__quote {
+    font-size: 1.35rem;
+  }
+}
+.about__quote--author {
+  padding: 0.25rem 1rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-family: AvenirNextDemi, sans-serif;
+}
+@media (min-width: 768px) {
+  .about__quote--author {
+    font-size: 1.12rem;
+  }
 }
 .about__subtitle {
   font-family: AvenirNextDemi, sans-serif;

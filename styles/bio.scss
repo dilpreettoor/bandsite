@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .active {
     border-bottom: 4px solid variables.$white;
+    @include mixins.font(AvenirNextBold);
 }
 
 .inactive {
@@ -157,7 +158,7 @@ h1, h2, h3, h4, h5, h6 {
         @include mixins.font(AvenirNextDemi);
 
         @include mixins.tablet {
-            font-size: 2.125rem;
+            font-size: 2.5rem;
         }
     }
 
@@ -166,6 +167,10 @@ h1, h2, h3, h4, h5, h6 {
         margin: auto;
         aspect-ratio: 16 / 9;
         padding-bottom: 1rem;
+
+        @include mixins.tablet {
+            width: 70%;
+        }
     }
 
     &__quote {
@@ -178,6 +183,8 @@ h1, h2, h3, h4, h5, h6 {
 
         @include mixins.tablet {
             font-size: 1.35rem;
+            line-height: 1.7rem;
+            margin: 0 6.1rem;
         }
 
         
@@ -195,6 +202,7 @@ h1, h2, h3, h4, h5, h6 {
 
        @include mixins.tablet {
         font-size: 1.12rem;
+        margin: 0 6.1rem;
     }
 
     }
@@ -203,6 +211,11 @@ h1, h2, h3, h4, h5, h6 {
         @include mixins.font(AvenirNextDemi);
         padding: 0 1.5rem;
         margin: 0 1.1rem;
+
+        @include mixins.tablet {
+            
+            margin: 0 6.0rem;
+        }
     }
 
     &__text {
@@ -211,9 +224,23 @@ h1, h2, h3, h4, h5, h6 {
         margin: 0 1.1rem;
 
         @include mixins.font(AvenirNextRegular);
+
     }
 }
 
+#first {
+    @include mixins.tablet {
+            
+        margin-left: 6.0rem;
+    }
+}
+
+#second {
+    @include mixins.tablet {
+            
+        margin-right: 6.0rem;
+    }
+}
 .gallery {
     background-color: variables.$alabaster;
     &__wrapper {

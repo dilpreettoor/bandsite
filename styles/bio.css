@@ -91,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .active {
   border-bottom: 4px solid #ffffff;
+  font-family: AvenirNextBold, sans-serif;
 }
 
 .inactive {
@@ -154,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 768px) {
   .about__title {
-    font-size: 2.125rem;
+    font-size: 2.5rem;
   }
 }
 .about__image {
@@ -162,6 +163,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: auto;
   aspect-ratio: 16/9;
   padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .about__image {
+    width: 70%;
+  }
 }
 .about__quote {
   padding: 0.25rem 1rem;
@@ -173,6 +179,8 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .about__quote {
     font-size: 1.35rem;
+    line-height: 1.7rem;
+    margin: 0 6.1rem;
   }
 }
 .about__quote--author {
@@ -185,6 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .about__quote--author {
     font-size: 1.12rem;
+    margin: 0 6.1rem;
   }
 }
 .about__subtitle {
@@ -192,11 +201,28 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 1.5rem;
   margin: 0 1.1rem;
 }
+@media (min-width: 768px) {
+  .about__subtitle {
+    margin: 0 6rem;
+  }
+}
 .about__text {
   padding: 0.25rem 1.5rem;
   line-height: 1.5rem;
   margin: 0 1.1rem;
   font-family: AvenirNextRegular, sans-serif;
+}
+
+@media (min-width: 768px) {
+  #first {
+    margin-left: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #second {
+    margin-right: 6rem;
+  }
 }
 
 .gallery {

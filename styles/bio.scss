@@ -1,0 +1,368 @@
+@use "./partials/mixins";
+@use "./partials/variables";
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 1.5rem 1rem 1rem 1rem;
+
+    @include mixins.tablet {
+        padding: 3rem 2.25rem 2.25rem 2.25rem;
+    }
+  }
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.site-header {
+    background-color: variables.$bandsite-black;
+    padding-top: 1rem;
+
+    @include mixins.tablet {
+        padding: 0rem 2rem;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: variables.$bandsite-black;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            width: auto;
+            column-gap: 4em;
+            height: 10vh;
+            
+        }
+        
+    }
+
+    &__logo {
+        width: 9rem;
+    }
+
+
+    &__nav-list {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        @include mixins.tablet {
+            width: auto;
+        }
+    }
+
+
+    &__nav-item {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem 0;
+
+        @include mixins.tablet {
+            margin-right: 4rem;
+            padding: 2.1rem 0;
+        }
+    }
+
+    &__nav-item:hover {
+        border-bottom: 4px solid variables.$white;
+        
+    }
+
+    &__nav-link {
+        color:variables.$white;
+        @include mixins.font(AvenirNextDemi);
+    }
+
+}
+
+.active {
+    border-bottom: 4px solid variables.$white;
+    @include mixins.font(AvenirNextBold);
+}
+
+.inactive {
+    color: variables.$mercury;
+}
+
+
+
+
+
+
+.hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+    height: 38vh;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include mixins.tablet {
+        height: 65vh;
+    }
+
+
+    @include mixins.desktop {
+        height: 100vh;
+    }
+
+    &__title {
+        color: variables.$white;
+        text-transform: capitalize;
+        z-index: 1;
+
+        @include mixins.font(AvenirNextDemi);
+
+        @include mixins.tablet {
+            font-size: 3.8rem;
+        }
+    }
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+  }
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__wrapper {
+        @include mixins.tablet {
+            display: flex;
+        }
+    }
+
+    &__title {
+        text-transform: capitalize;
+        font-size: 1.85rem;
+
+        @include mixins.font(AvenirNextDemi);
+
+        @include mixins.tablet {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__image {
+        width: 90%;
+        margin: auto;
+        aspect-ratio: 16 / 9;
+        padding-bottom: 1rem;
+
+        @include mixins.tablet {
+            width: 70%;
+        }
+    }
+
+    &__quote {
+        padding: 0.25rem 1rem;
+        line-height: 1.5rem;
+        font-size: 1.1rem;
+        margin: 0 1.1rem;
+
+        @include mixins.font(AvenirNextDemi);
+
+        @include mixins.tablet {
+            font-size: 1.35rem;
+            line-height: 1.7rem;
+            margin: 0 6.1rem;
+        }
+
+        
+            
+        }
+
+
+    &__quote--author {
+        padding: 0.25rem 1rem;
+       line-height: 1.5rem;
+       font-size: 1rem;
+       margin: 0 1.1rem;
+
+       @include mixins.font(AvenirNextDemi);
+
+       @include mixins.tablet {
+        font-size: 1.12rem;
+        margin: 0 6.1rem;
+    }
+
+    }
+
+    &__subtitle {
+        @include mixins.font(AvenirNextDemi);
+        padding: 0 1.5rem;
+        margin: 0 1.1rem;
+
+        @include mixins.tablet {
+            
+            margin: 0 6.0rem;
+        }
+    }
+
+    &__text {
+        padding: 0.25rem 1.5rem;
+        line-height: 1.5rem;
+        margin: 0 1.1rem;
+
+        @include mixins.font(AvenirNextRegular);
+
+    }
+}
+
+#first {
+    @include mixins.tablet {
+            
+        margin-left: 6.0rem;
+    }
+}
+
+#second {
+    @include mixins.tablet {
+            
+        margin-right: 6.0rem;
+    }
+}
+.gallery {
+    background-color: variables.$alabaster;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include mixins.tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__photo {
+        width: 80vw;
+        padding-bottom: 1rem;
+
+        @include mixins.tablet {
+            width: 30%;
+            padding: 1rem 1rem;
+        }
+    }
+
+    &__title {
+        @include mixins.font(AvenirNextDemi);
+    }
+}
+
+.footer {
+
+    background-color: variables.$bandsite-black;
+    padding: 1rem;
+
+    &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+    position: relative;
+
+    @include mixins.tablet {
+        flex-direction: row;
+        align-items: center;
+    }
+        }
+
+    &__sub-wrapper-top-text {
+        color: variables.$white;
+        @include mixins.font(AvenirNextDemi);
+        
+    }
+
+    &__sub-wrapper-middle-text {
+        color: variables.$alabaster;
+        @include mixins.font(AvenirNextRegular);
+        
+    }
+
+    &__sub-wrapper-bottom-text {
+        color: variables.$alabaster;
+        @include mixins.font(AvenirNextRegular);
+    }
+
+    &__sub-wrapper-top {
+        padding: 0.25rem 1rem;
+    }
+
+    &__sub-wrapper-middle {
+        padding: 1.25rem 1rem;
+    }
+
+    &__sub-wrapper-bottom {
+        padding: 0.25rem 1rem;
+    }
+
+
+    &__social {
+        display: flex;
+        column-gap: 2rem;
+        padding: 1rem 1rem;
+    }
+
+    &__title {
+        text-transform: capitalize;
+        color: variables.$white;
+        @include mixins.font(AvenirNextBold);
+    }
+
+    &__social-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__logo {
+        width: 9rem;
+        margin-top: 4.5rem;
+        margin-left: 1rem;
+
+        @include mixins.tablet {
+            display: none;
+        }
+    }
+
+    &__top-logo {
+        display: none;
+
+        @include mixins.tablet {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.5rem;
+
+        }
+    }
+
+    &__copyright-text {
+        color: variables.$alabaster;
+        padding: 1rem 1rem;
+        @include mixins.font(AvenirNextRegular);
+    }
+}
+
+
+

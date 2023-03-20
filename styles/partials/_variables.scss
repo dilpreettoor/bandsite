@@ -1,0 +1,39 @@
+//colors
+$bandsite-black: #323232;
+$silver: #AFAFAF;
+$white: #ffffff;
+$bandsite-darkblack: #000000;
+$mercury: #E1E1E1;
+$alabaster: #FAFAFA;
+
+
+
+
+
+
+// screen sizes
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+// font face
+@font-face {
+    font-family: 'AvenirNextBold';
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff2"),
+         url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff");
+         font-weight: 700;
+}
+
+
+@font-face {
+    font-family: "AvenirNextRegular";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff2"),
+         url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "AvenirNextDemi";
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff2"),
+         url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff");
+    font-weight: 600;
+}

@@ -254,6 +254,35 @@ h1, h2, h3, h4, h5, h6 {
   font-family: AvenirNextDemi, sans-serif;
 }
 
+.comment {
+  display: flex;
+  flex-direction: column;
+}
+.comment__form {
+  display: flex;
+  flex-direction: row;
+}
+.comment__profile {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scale(2);
+}
+.comment__title {
+  font-family: AvenirNextDemi, sans-serif;
+}
+.comment__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.comment__wrapper--round {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .footer {
   background-color: #323232;
   padding: 1rem;

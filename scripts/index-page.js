@@ -18,6 +18,7 @@ let comments = [
 
   const showComments = (comment) => {
     let commentDiv = document.createElement("div");
+    let commentTop = document.createElement("div");
     let name = document.createElement("h3");
     let timestamp = document.createElement("p");
     let commentText = document.createElement("p");
@@ -25,20 +26,23 @@ let comments = [
     name.textContent = comment.name;
     timestamp.textContent = comment.timestamp;
     commentText.textContent = comment.text;
-  
-    commentDiv.appendChild(name);
-    commentDiv.appendChild(timestamp);
+    commentTop.appendChild(name);
+    commentTop.appendChild(timestamp);
+    commentDiv.appendChild(commentTop);
     commentDiv.appendChild(commentText);
-  
     commentDiv.style.display = "flex";
     commentDiv.style.flexDirection = "column";
     commentDiv.style.alignItems = "flex-start";
     commentDiv.style.width = "100%";
-
-    
-  
+    commentTop.style.display = "flex";
+    commentTop.style.flexDirection = "row";
+    commentTop.style.justifyContent = "space-between";
+    commentTop.style.width = "100%";
+    commentText.style.width = "100%";
+    name.style.margin = "0";
+    timestamp.style.marginTop = "1.4rem";
     document.getElementById("comment-section").appendChild(commentDiv);
-  }
+  };
   
   for (let i = 0; i < comments.length; i++) {
     let comment = comments[i];

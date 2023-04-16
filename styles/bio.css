@@ -257,7 +257,10 @@ h1, h2, h3, h4, h5, h6 {
 .comment {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 2rem;
+}
+.comment__area {
+  display: flex;
 }
 .comment__form {
   display: flex;

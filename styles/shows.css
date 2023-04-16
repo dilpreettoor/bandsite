@@ -13,13 +13,17 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff");
   font-weight: 600;
 }
-h1, h2, h3, h4, h5, h6 {
-  padding: 1.5rem 1rem 1rem 1rem;
+html {
+  font-size: 16px;
 }
-@media (min-width: 768px) {
-  h1, h2, h3, h4, h5, h6 {
-    padding: 3rem 2.25rem 2.25rem 2.25rem;
-  }
+
+h1 {
+  font-size: 3.2rem;
+}
+
+p {
+  font-size: 1.3rem;
+  padding: 1rem 0;
 }
 
 * {
@@ -99,13 +103,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero {
-  background-image: url("../assets/images/hero-bio.jpg");
-  height: 38vh;
+  background-image: url("../assets/images/hero-shows.jpg");
+  height: 43vh;
   background-size: cover;
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 @media (min-width: 768px) {
   .hero {
@@ -124,14 +127,18 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   flex-direction: column;
 }
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+}
 .hero__wrapper--video {
   display: flex;
-  width: 100%;
-  padding: 1.5rem 1rem;
+  width: 60%;
+  padding: 3rem 0;
 }
 .hero__title {
   color: #ffffff;
-  text-transform: capitalize;
   z-index: 1;
   font-family: AvenirNextDemi, sans-serif;
 }
@@ -144,7 +151,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #FAFAFA;
   text-transform: capitalize;
   z-index: 1;
-  padding-left: 1.2rem;
   font-family: AvenirNextRegular, sans-serif;
 }
 @media (min-width: 768px) {

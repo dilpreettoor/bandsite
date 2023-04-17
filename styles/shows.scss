@@ -1,13 +1,26 @@
-@use "./partials/mixins";
-@use "./partials/variables";
+@use "../styles/partials/mixins";
+@use "../styles/partials/variables";
 
-h1, h2, h3, h4, h5, h6 {
-    padding: 1.5rem 1rem 1rem 1rem;
+// h1, h2, h3, h4, h5, h6 {
+//     padding: 1.5rem 1rem 1rem 1rem;
 
-    @include mixins.tablet {
-        padding: 3rem 2.25rem 2.25rem 2.25rem;
-    }
-  }
+//     @include mixins.tablet {
+//         padding: 3rem 2.25rem 2.25rem 2.25rem;
+//     }
+//   }
+
+html {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 1.3rem;
+    padding: 1rem 0;
+}
 
 
 *
@@ -101,25 +114,44 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .hero {
-    background-image: url("../assets/images/hero-bio.jpg");
-    height: 38vh;
+
+    background-image: url("../assets/images/hero-shows.jpg");
     background-size: cover;
     position: relative;
     display: flex;
     align-items: center;
 
     @include mixins.tablet {
-        height: 65vh;
     }
 
 
     @include mixins.desktop {
-        height: 100vh;
     }
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column; 
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding: 2.5rem;
+    }
+
+
+    &__wrapper--video {
+        display: flex;
+        width: 60%;
+        padding: 3rem 0;
+    }
+
 
     &__title {
         color: variables.$white;
-        text-transform: capitalize;
         z-index: 1;
 
         @include mixins.font(AvenirNextDemi);
@@ -128,6 +160,28 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 3.8rem;
         }
     }
+
+    &__subtitle {
+        color: variables.$alabaster;
+        text-transform: capitalize;
+        z-index: 1;
+
+        @include mixins.font(AvenirNextRegular);
+
+        @include mixins.tablet {
+            font-size: 3.8rem;
+        }
+    }
+
+    &__video {
+        width: 100%;
+        height: 150px;
+        z-index: 3;
+    }
+}
+
+.hero > h1 {
+
 }
 
 .hero::before {
@@ -140,178 +194,76 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgba(0, 0, 0, 0.5); 
   }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    &__wrapper {
-        @include mixins.tablet {
-            display: flex;
-        }
-    }
-
-    &__title {
-        text-transform: capitalize;
-        font-size: 1.85rem;
-
-        @include mixins.font(AvenirNextDemi);
-
-        @include mixins.tablet {
-            font-size: 2.5rem;
-        }
-    }
-
-    &__image {
-        width: 90%;
-        margin: auto;
-        aspect-ratio: 16 / 9;
-        padding-bottom: 1rem;
-
-        @include mixins.tablet {
-            width: 70%;
-        }
-    }
-
-    &__quote {
-        padding: 0.25rem 1rem;
-        line-height: 1.5rem;
-        font-size: 1.1rem;
-        margin: 0 1.1rem;
-
-        @include mixins.font(AvenirNextDemi);
-
-        @include mixins.tablet {
-            font-size: 1.35rem;
-            line-height: 1.7rem;
-            margin: 0 6.1rem;
-        }
-
-        
-            
-        }
-
-
-    &__quote--author {
-        padding: 0.25rem 1rem;
-       line-height: 1.5rem;
-       font-size: 1rem;
-       margin: 0 1.1rem;
-
-       @include mixins.font(AvenirNextDemi);
-
-       @include mixins.tablet {
-        font-size: 1.12rem;
-        margin: 0 6.1rem;
-    }
-
-    }
-
-    &__subtitle {
-        @include mixins.font(AvenirNextDemi);
-        padding: 0 1.5rem;
-        margin: 0 1.1rem;
-
-        @include mixins.tablet {
-            
-            margin: 0 6.0rem;
-        }
-    }
-
-    &__text {
-        padding: 0.25rem 1.5rem;
-        line-height: 1.5rem;
-        margin: 0 1.1rem;
-
-        @include mixins.font(AvenirNextRegular);
-
-    }
-}
-
-#first {
-    @include mixins.tablet {
-            
-        margin-left: 6.0rem;
-    }
-}
-
-#second {
-    @include mixins.tablet {
-            
-        margin-right: 6.0rem;
-    }
-}
-.gallery {
-    background-color: variables.$alabaster;
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        @include mixins.tablet {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-    }
-
-    &__photo {
-        width: 80vw;
-        padding-bottom: 1rem;
-
-        @include mixins.tablet {
-            width: 30%;
-            padding: 1rem 1rem;
-        }
-    }
-
-    &__title {
-        @include mixins.font(AvenirNextDemi);
-    }
-}
-
-.comment {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-
-    &__area {
-        display: flex;
-    }
-
-    &__form {
-        display: flex;
-        flex-direction: row;
-    }
-
-    &__profile {
-        width: 100%; 
-        height: auto; 
-        display: block;
-        transform: scale(2);
-    }
-
-    &__title {
-        @include mixins.font(AvenirNextDemi);
-    }
-
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
-
-        &--round {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-        }
-    }
-
-    
-
-
-}
+  
+  .shows__title {
+    font-size: 24px;
+    padding: 0.8rem;
+  }
+  
+  .shows__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .shows__table {
+    padding: 2.5rem;
+  }
+  
+  .shows__header-cell {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .shows__header-cell--date {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__header-cell--venue {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__header-cell--location {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell {
+    padding: 10px;
+  }
+  
+  .shows__cell--date {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell--venue {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell--location {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell--button {
+    text-align: center;
+  }
+  
+  .shows__button {
+    background-color: variables.$bandsite-black;
+    color: variables.$white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  
 
 .footer {
 

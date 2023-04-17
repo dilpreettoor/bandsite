@@ -1,17 +1,97 @@
-let comments = [
+const shows = [
     {
-      name: "Connor Walton",
-      timestamp: "02/17/2021",
-      text: "This is art. This is inexpicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+      date: "Mon Sept 06 2021",
+      venue: "Ronald Lane",
+      location: "San Francisco, CA"
     },
     {
-      name: "Emilie Beach",
-      timestamp: "01/09/2021",
-      text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."
+      date: "Tue Sept 21 2021",
+      venue: "Pier 3 East",
+      location: "San Francisco, CA"
     },
     {
-      name: "Miles Acosta",
-      timestamp: "12/20/2020",
-      text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+      date: "Fri Oct 15 2021",
+      venue: "View Lounge",
+      location: "San Francisco, CA"
+    },
+    {
+      date: "Sat Nov 06 2021",
+      venue: "Hyatt Agency",
+      location: "San Francisco, CA"
+    },
+    {
+      date: "Fri Nov 26 2021",
+      venue: "Moscow Center",
+      location: "San Francisco, CA"
+    },
+    {
+      date: "Wed Dec 15 2021",
+      venue: "Press Club",
+      location: "San Francisco, CA"
     }
   ];
+  
+  const renderShowsTable = (shows) => {
+    const showsContainer = document.querySelector(".shows");
+  
+    const title = document.createElement("h1");
+    title.classList.add("shows__title");
+    title.innerText = "Shows";
+    showsContainer.appendChild(title);
+  
+    const table = document.createElement("table");
+    table.classList.add("shows__table");
+    showsContainer.appendChild(table);
+  
+    const headerRow = document.createElement("tr");
+    headerRow.classList.add("shows__header-row");
+    table.appendChild(headerRow);
+  
+    const dateHeader = document.createElement("th");
+    dateHeader.classList.add("shows__header-cell", "shows__header-cell--date");
+    dateHeader.innerText = "Date";
+    headerRow.appendChild(dateHeader);
+  
+    const venueHeader = document.createElement("th");
+    venueHeader.classList.add("shows__header-cell", "shows__header-cell--venue");
+    venueHeader.innerText = "Venue";
+    headerRow.appendChild(venueHeader);
+  
+    const locationHeader = document.createElement("th");
+    locationHeader.classList.add("shows__header-cell", "shows__header-cell--location");
+    locationHeader.innerText = "Location";
+    headerRow.appendChild(locationHeader);
+  
+    shows.forEach((show) => {
+      const row = document.createElement("tr");
+      row.classList.add("shows__row");
+      table.appendChild(row);
+  
+      const dateCell = document.createElement("td");
+      dateCell.classList.add("shows__cell", "shows__cell--date");
+      dateCell.innerText = show.date;
+      row.appendChild(dateCell);
+  
+      const venueCell = document.createElement("td");
+      venueCell.classList.add("shows__cell", "shows__cell--venue");
+      venueCell.innerText = show.venue;
+      row.appendChild(venueCell);
+  
+      const locationCell = document.createElement("td");
+      locationCell.classList.add("shows__cell", "shows__cell--location");
+      locationCell.innerText = show.location;
+      row.appendChild(locationCell);
+  
+      const buttonCell = document.createElement("td");
+      buttonCell.classList.add("shows__cell", "shows__cell--button");
+      row.appendChild(buttonCell);
+  
+      const button = document.createElement("button");
+      button.classList.add("shows__button");
+      button.innerText = "Buy Tickets";
+      buttonCell.appendChild(button);
+    });
+  };
+  
+  renderShowsTable(shows);
+  

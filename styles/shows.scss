@@ -116,7 +116,7 @@ p {
 .hero {
 
     background-image: url("../assets/images/hero-shows.jpg");
-    height: 43vh;
+    // height: 43vh;
     background-size: cover;
     position: relative;
     display: flex;
@@ -197,6 +197,76 @@ p {
     background-color: rgba(0, 0, 0, 0.5); 
   }
 
+  
+  .shows__title {
+    font-size: 24px;
+    padding: 0.8rem;
+  }
+  
+  .shows__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .shows__table {
+    padding: 2.5rem;
+  }
+  
+  .shows__header-cell {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .shows__header-cell--date {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__header-cell--venue {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__header-cell--location {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell {
+    padding: 10px;
+  }
+  
+  .shows__cell--date {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell--venue {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell--location {
+    flex-basis: 33.33%;
+  }
+  
+  .shows__cell--button {
+    text-align: center;
+  }
+  
+  .shows__button {
+    background-color: variables.$bandsite-black;
+    color: variables.$white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  
 
 .footer {
 

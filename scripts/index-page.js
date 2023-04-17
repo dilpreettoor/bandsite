@@ -48,3 +48,57 @@ let comments = [
     let comment = comments[i];
     showComments(comment);
   }
+  
+
+  const postComment = (e) => {
+    e.preventDefault();
+  
+    const nameInput = document.querySelector('#name');
+    const commentInput = document.querySelector('#comment');
+    const commentSection = document.querySelector('#comment-section');
+  
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
+
+    const newComment = {
+      name: nameInput.value,
+      timestamp: formattedDate,
+      text: commentInput.value
+    };
+  
+    comments.push(newComment);
+  
+    const commentDiv = document.createElement("div");
+    const commentTop = document.createElement("div");
+    const name = document.createElement("h3");
+    const timestamp = document.createElement("p");
+    const commentText = document.createElement("p");
+  
+    name.textContent = newComment.name;
+    timestamp.textContent = newComment.timestamp;
+    commentText.textContent = newComment.text;
+    commentTop.appendChild(name);
+    commentTop.appendChild(timestamp);
+    commentDiv.appendChild(commentTop);
+    commentDiv.appendChild(commentText);
+    commentDiv.style.display = "flex";
+    commentDiv.style.flexDirection = "column";
+    commentDiv.style.alignItems = "flex-start";
+    commentDiv.style.width = "100%";
+    commentTop.style.display = "flex";
+    commentTop.style.flexDirection = "row";
+    commentTop.style.justifyContent = "space-between";
+    commentTop.style.width = "100%";
+    commentText.style.width = "100%";
+    name.style.margin = "0";
+    timestamp.style.marginTop = "1.4rem";
+  
+    // Append new comment to comment section
+    commentSection.appendChild(commentDiv);
+  
+    // Clear input fields
+    nameInput.value = '';
+    commentInput.value = '';
+  };
+
+  document.querySelector('.comment__form').addEventListener('submit', postComment);

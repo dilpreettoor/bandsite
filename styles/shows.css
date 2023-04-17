@@ -82,7 +82,7 @@ p {
 @media (min-width: 768px) {
   .site-header__nav-item {
     margin-right: 4rem;
-    padding: 2.1rem 0;
+    padding: 1rem 0;
   }
 }
 .site-header__nav-item:hover {
@@ -108,16 +108,6 @@ p {
   position: relative;
   display: flex;
   align-items: center;
-}
-@media (min-width: 768px) {
-  .hero {
-    height: 65vh;
-  }
-}
-@media (min-width: 1280px) {
-  .hero {
-    height: 100vh;
-  }
 }
 .hero__wrapper {
   position: relative;

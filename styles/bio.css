@@ -13,15 +13,6 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff");
   font-weight: 600;
 }
-h1, h2, h3, h4, h5, h6 {
-  padding: 1.5rem 1rem 1rem 1rem;
-}
-@media (min-width: 768px) {
-  h1, h2, h3, h4, h5, h6 {
-    padding: 3rem 2.25rem 2.25rem 2.25rem;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -62,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   list-style: none;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -72,13 +64,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .site-header__nav-item {
   width: 100%;
+  height: 100%;
   text-align: center;
-  padding: 0.7rem 0;
+  padding: 1rem;
 }
 @media (min-width: 768px) {
   .site-header__nav-item {
-    margin-right: 4rem;
-    padding: 1rem 0;
+    padding: 2.5rem;
   }
 }
 .site-header__nav-item:hover {
@@ -86,6 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .site-header__nav-link {
   color: #ffffff;
+  height: 100%;
   font-family: AvenirNextDemi, sans-serif;
 }
 
@@ -105,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   display: flex;
   align-items: center;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 @media (min-width: 768px) {
   .hero {
@@ -120,6 +114,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   text-transform: capitalize;
   z-index: 1;
+  font-size: 2rem;
   font-family: AvenirNextDemi, sans-serif;
 }
 @media (min-width: 768px) {
@@ -142,6 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 @media (min-width: 768px) {
   .about__wrapper {
@@ -151,6 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 .about__title {
   text-transform: capitalize;
   font-size: 1.85rem;
+  padding-bottom: 1rem;
   font-family: AvenirNextDemi, sans-serif;
 }
 @media (min-width: 768px) {
@@ -159,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .about__image {
-  width: 90%;
+  width: 100%;
   margin: auto;
   aspect-ratio: 16/9;
   padding-bottom: 1rem;
@@ -170,10 +167,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .about__quote {
-  padding: 0.25rem 1rem;
   line-height: 1.5rem;
   font-size: 1.1rem;
-  margin: 0 1.1rem;
   font-family: AvenirNextDemi, sans-serif;
 }
 @media (min-width: 768px) {
@@ -184,32 +179,20 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .about__quote--author {
-  padding: 0.25rem 1rem;
   line-height: 1.5rem;
   font-size: 1rem;
-  margin: 0 1.1rem;
   font-family: AvenirNextDemi, sans-serif;
 }
 @media (min-width: 768px) {
   .about__quote--author {
     font-size: 1.12rem;
-    margin: 0 6.1rem;
   }
 }
 .about__subtitle {
   font-family: AvenirNextDemi, sans-serif;
-  padding: 0 1.5rem;
-  margin: 0 1.1rem;
-}
-@media (min-width: 768px) {
-  .about__subtitle {
-    margin: 0 6rem;
-  }
 }
 .about__text {
-  padding: 0.25rem 1.5rem;
   line-height: 1.5rem;
-  margin: 0 1.1rem;
   font-family: AvenirNextRegular, sans-serif;
 }
 
@@ -227,6 +210,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .gallery {
   background-color: #FAFAFA;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 .gallery__wrapper {
   display: flex;
@@ -241,7 +225,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .gallery__photo {
-  width: 80vw;
+  width: 100%;
   padding-bottom: 1rem;
 }
 @media (min-width: 768px) {
@@ -259,12 +243,51 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   padding: 2rem;
 }
+.comment__container {
+  display: flex;
+  flex-direction: column;
+}
 .comment__area {
   display: flex;
 }
 .comment__form {
   display: flex;
   flex-direction: row;
+}
+.comment__form label {
+  font-family: AvenirNextRegular, sans-serif;
+  color: #AFAFAF;
+}
+.comment__form input[type=text] {
+  font-family: AvenirNextRegular, sans-serif;
+  border: 1px solid #AFAFAF;
+  border-radius: 3px;
+  padding: 0.9rem;
+  background-color: #FAFAFA;
+}
+.comment__form textarea[id=comment] {
+  font-family: AvenirNextRegular, sans-serif;
+  border: 1px solid #AFAFAF;
+  background-color: #FAFAFA;
+  border-radius: 3px;
+  padding: 0.9rem;
+  color: #323232;
+}
+.comment__form textarea::-moz-placeholder {
+  color: #323232;
+  font-family: AvenirNextRegular, sans-serif;
+}
+.comment__form textarea::placeholder {
+  color: #323232;
+  font-family: AvenirNextRegular, sans-serif;
+}
+.comment__form input::-moz-placeholder {
+  color: #323232;
+  font-family: AvenirNextRegular, sans-serif;
+}
+.comment__form input::placeholder {
+  color: #323232;
+  font-family: AvenirNextRegular, sans-serif;
 }
 .comment__profile {
   width: 100%;
@@ -274,10 +297,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .comment__title {
   font-family: AvenirNextDemi, sans-serif;
+  font-size: 2rem;
 }
 .comment__wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 .comment__wrapper--round {
   display: inline-block;
@@ -289,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer {
   background-color: #323232;
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 .footer__wrapper {
   display: flex;
@@ -315,20 +341,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #FAFAFA;
   font-family: AvenirNextRegular, sans-serif;
 }
-.footer__sub-wrapper-top {
-  padding: 0.25rem 1rem;
-}
-.footer__sub-wrapper-middle {
-  padding: 1.25rem 1rem;
-}
-.footer__sub-wrapper-bottom {
-  padding: 0.25rem 1rem;
-}
 .footer__social {
   display: flex;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
-  padding: 1rem 1rem;
 }
 .footer__title {
   text-transform: capitalize;
@@ -363,6 +379,5 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer__copyright-text {
   color: #FAFAFA;
-  padding: 1rem 1rem;
   font-family: AvenirNextRegular, sans-serif;
 }/*# sourceMappingURL=bio.css.map */

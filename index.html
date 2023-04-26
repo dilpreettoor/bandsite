@@ -15,15 +15,15 @@
             <img src="./assets/logos/Logo-bandsite.svg" alt="site-logo" class="site-header__logo"/>
         </a>
           <ul class="site-header__nav-list">
-            <a href="#" class="site-header__nav-item active"><li  class="site-header__nav-link">Biography</li></a>
+            <a href="#" class="site-header__nav-item active"><li  class="site-header__nav-link ">Biography</li></a>
             <a href="./pages/shows.html" class="site-header__nav-item"><li class="site-header__nav-link inactive">Shows</li></a>
           </ul>
         </nav>
       </header>
 
     <!--Hero-->
-    <section class="hero">
-            <h1 class="hero__title">the bees knees</h2>
+    <section class="hero">    
+                <h1 class="hero__title">the bees knees</h2>
     </section>
 
     <!-- About -->
@@ -89,28 +89,27 @@
     </section>
 
     <section class="comment">
-        <h2 class="comment__title">Join the Conversation</h2>
-        <form class="comment__form">
-
-            <div class="comment__wrapper--round">
-                <!-- add profile picture here -->
-                <img class="comment__profile" src="./assets/images/Mohan-muruge.jpg">
-    
-            </div>
-            <div class="comment__wrapper">
-            <label for="name">NAME</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+        <div class="comment__container">
+            <h2 class="comment__title">Join the Conversation</h2>
+            <form class="comment__form">
+                <div class="comment__wrapper--round">
+                    <!-- add profile picture here -->
+                    <img class="comment__profile" src="./assets/images/Mohan-muruge.jpg">
+                </div>
+                <div class="comment__wrapper">
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
             
-            <label for="comment">COMMENT</label>
-            <textarea id="comment" name="comment" rows="4" placeholder="Add a new comment" required></textarea>
+                <label for="comment">COMMENT</label>
+                <textarea id="comment" name="comment" rows="8" placeholder="Add a new comment" required></textarea>
             
-            <button type="submit">COMMENT</button>
-             </div>
-            </form>
-
-            <div class="comments__area" id="comment-section">
-
-            </div>    
+                <button type="submit">COMMENT</button>
+                 </div>
+                </form>
+                <div class="comments__area" id="comment-section">
+                </div>
+        </div>
     </section>
 
     <!-- Footer -->

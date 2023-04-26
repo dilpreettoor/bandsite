@@ -66,6 +66,7 @@ p {
   display: flex;
   list-style: none;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -76,13 +77,13 @@ p {
 }
 .site-header__nav-item {
   width: 100%;
+  height: 100%;
   text-align: center;
-  padding: 0.7rem 0;
+  padding: 1rem;
 }
 @media (min-width: 768px) {
   .site-header__nav-item {
-    margin-right: 4rem;
-    padding: 1rem 0;
+    padding: 2.5rem;
   }
 }
 .site-header__nav-item:hover {
@@ -90,6 +91,7 @@ p {
 }
 .site-header__nav-link {
   color: #ffffff;
+  height: 100%;
   font-family: AvenirNextDemi, sans-serif;
 }
 

@@ -196,73 +196,110 @@ p {
   }
 
   
-  .shows__title {
-    font-size: 24px;
-    padding: 0.8rem;
+  .shows {
+    &__title {
+      font-size: 2rem;
+      padding: 0.8rem;
+      @include mixins.font(AvenirNextRegular);
+
+
+    }
+  
+    &__container-all {
+      padding: 2.5rem;
+    }
+  
+    &__table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+  
+    &__header-cell {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
+      text-align: left;
+    }
+  
+    &__header-cell--date {
+      flex-basis: 33.33%;
+    }
+  
+    &__header-cell--venue {
+      flex-basis: 33.33%;
+    }
+  
+    &__header-cell--location {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell {
+      padding: 10px;
+    }
+  
+    &__cell--date {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell--venue {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell--location {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell--button {
+      text-align: center;
+    }
+  
+    &__date-container,
+    &__venue-container,
+    &__location-container,
+    &__button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    &__date-header,
+    &__venue-header,
+    &__location-header {
+      @include mixins.font(AvenirNextRegular);
+      flex-basis: 100%;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: variables.$mercury;
+    }
+  
+    &__venue,
+    &__location {
+        @include mixins.font(AvenirNextRegular);
+      flex-basis: 100%;
+      font-size: 1rem;
+    }
+
+    &__date {
+        @include mixins.font(AvenirNextBold);
+        font-size: 1rem;
+    }
+  
+    &__button {
+      background-color: variables.$bandsite-black;
+      color: variables.$white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
   }
   
-  .shows__table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  .shows__table {
-    padding: 2.5rem;
-  }
-  
-  .shows__header-cell {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .shows__header-cell--date {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__header-cell--venue {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__header-cell--location {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell {
-    padding: 10px;
-  }
-  
-  .shows__cell--date {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell--venue {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell--location {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell--button {
-    text-align: center;
-  }
-  
-  .shows__button {
-    background-color: variables.$bandsite-black;
-    color: variables.$white;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
   
   
 

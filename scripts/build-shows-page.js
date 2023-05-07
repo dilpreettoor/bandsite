@@ -10,15 +10,42 @@ renderShowsTable = (shows) => {
   title.innerText = "Shows";
   titleContainer.appendChild(title);
 
-  const headerContainer = document.createElement("div");
-  headerContainer.classList.add("shows__header-container");
-  showsContainer.appendChild(headerContainer);
+  const tableContainer = document.createElement("div");
+  tableContainer.classList.add("shows__table-container");
+  showsContainer.appendChild(tableContainer);
+
+  const table = document.createElement("div");
+  table.classList.add("shows__table");
+  tableContainer.appendChild(table);
+
+  const heading = document.createElement("div");
+  heading.classList.add("shows__heading");
+  table.appendChild(heading);
+
+  const headingRow = document.createElement("div");
+  headingRow.classList.add("shows__row");
+  heading.appendChild(headingRow);
+
+  const dateHeader = document.createElement("span");
+  dateHeader.classList.add("shows__field--date");
+  dateHeader.innerText = "Date";
+  headingRow.appendChild(dateHeader);
+
+  const venueHeader = document.createElement("span");
+  venueHeader.classList.add("shows__field--venue");
+  venueHeader.innerText = "Venue";
+  headingRow.appendChild(venueHeader);
+
+  const locationHeader = document.createElement("span");
+  locationHeader.classList.add("shows__field--location");
+  locationHeader.innerText = "Location";
+  headingRow.appendChild(locationHeader);
 
 
   shows.forEach((show) => {
     const oneContainer = document.createElement("div");
     oneContainer.classList.add("shows__one-container");
-    showsContainer.appendChild(oneContainer);
+    table.appendChild(oneContainer);
 
     const dateContainer = document.createElement("div");
     dateContainer.classList.add("shows__date-container");

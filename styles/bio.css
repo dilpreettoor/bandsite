@@ -13,6 +13,10 @@
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff2"), url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("woff");
   font-weight: 600;
 }
+h1, h2, h3, h4, h5, h6 {
+  font-family: AvenirNextRegular, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -186,10 +190,17 @@
 @media (min-width: 768px) {
   .about__quote--author {
     font-size: 1.12rem;
+    margin: 0 6.1rem;
   }
 }
 .about__subtitle {
   font-family: AvenirNextDemi, sans-serif;
+}
+@media (min-width: 768px) {
+  .about__subtitle {
+    font-size: 1.12rem;
+    margin: 0 6.1rem;
+  }
 }
 .about__text {
   line-height: 1.5rem;
@@ -250,11 +261,20 @@
 .comment {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding: 2rem;
 }
 .comment__container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .comment__container {
+    width: 60%;
+  }
 }
 .comment__area {
   display: flex;

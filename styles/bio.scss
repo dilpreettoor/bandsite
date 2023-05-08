@@ -1,13 +1,9 @@
 @use "./partials/mixins";
 @use "./partials/variables";
 
-// h1, h2, h3, h4, h5, h6 {
-//     padding: 1.5rem 1rem 1rem 1rem;
-
-//     @include mixins.tablet {
-//         padding: 3rem 2.25rem 2.25rem 2.25rem;
-//     }
-//   }
+ h1, h2, h3, h4, h5, h6 {
+     @include mixins.font(AvenirNextRegular)
+   }
 
 
 *
@@ -205,6 +201,7 @@
 
        @include mixins.tablet {
         font-size: 1.12rem;
+        margin: 0 6.1rem;
 
     }
 
@@ -213,9 +210,9 @@
     &__subtitle {
         @include mixins.font(AvenirNextDemi);
 
-        @include mixins.tablet {
-            
-
+        @include mixins.tablet {    
+            font-size: 1.12rem;
+            margin: 0 6.1rem;
         }
     }
 
@@ -283,11 +280,19 @@
 .comment {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 2rem;
 
     &__container {
         display: flex;
         flex-direction: column;
+        width: 100%;
+
+        @include mixins.tablet {
+            width: 60%;
+        }
     }
 
     &__area {

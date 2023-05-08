@@ -1,13 +1,9 @@
 @use "./partials/mixins";
 @use "./partials/variables";
 
-h1, h2, h3, h4, h5, h6 {
-    padding: 1.5rem 1rem 1rem 1rem;
-
-    @include mixins.tablet {
-        padding: 3rem 2.25rem 2.25rem 2.25rem;
-    }
-  }
+ h1, h2, h3, h4, h5, h6 {
+     @include mixins.font(AvenirNextRegular)
+   }
 
 
 *
@@ -54,6 +50,7 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         list-style: none;
         width: 100%;
+        height: 100%;
         justify-content: center;
         align-items: center;
 
@@ -65,12 +62,12 @@ h1, h2, h3, h4, h5, h6 {
 
     &__nav-item {
         width: 100%;
+        height: 100%;
         text-align: center;
-        padding: 0.7rem 0;
+        padding: 1rem;
 
         @include mixins.tablet {
-            margin-right: 4rem;
-            padding: 1rem 0;
+            padding: 2.5rem;
         }
     }
 
@@ -81,6 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 
     &__nav-link {
         color:variables.$white;
+        height: 100%;
         @include mixins.font(AvenirNextDemi);
     }
 
@@ -89,6 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 .active {
     border-bottom: 4px solid variables.$white;
     @include mixins.font(AvenirNextBold);
+
 }
 
 .inactive {
@@ -107,6 +106,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: flex;
     align-items: center;
+    padding: 1.5rem 1rem 1rem 1rem;
 
     @include mixins.tablet {
         height: 65vh;
@@ -121,6 +121,7 @@ h1, h2, h3, h4, h5, h6 {
         color: variables.$white;
         text-transform: capitalize;
         z-index: 1;
+        font-size: 2rem;
 
         @include mixins.font(AvenirNextDemi);
 
@@ -144,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1.5rem 1rem 1rem 1rem;
 
     &__wrapper {
         @include mixins.tablet {
@@ -154,6 +156,7 @@ h1, h2, h3, h4, h5, h6 {
     &__title {
         text-transform: capitalize;
         font-size: 1.85rem;
+        padding-bottom: 1rem;
 
         @include mixins.font(AvenirNextDemi);
 
@@ -163,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &__image {
-        width: 90%;
+        width: 100%;
         margin: auto;
         aspect-ratio: 16 / 9;
         padding-bottom: 1rem;
@@ -174,10 +177,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &__quote {
-        padding: 0.25rem 1rem;
         line-height: 1.5rem;
         font-size: 1.1rem;
-        margin: 0 1.1rem;
 
         @include mixins.font(AvenirNextDemi);
 
@@ -193,35 +194,31 @@ h1, h2, h3, h4, h5, h6 {
 
 
     &__quote--author {
-        padding: 0.25rem 1rem;
        line-height: 1.5rem;
        font-size: 1rem;
-       margin: 0 1.1rem;
 
        @include mixins.font(AvenirNextDemi);
 
        @include mixins.tablet {
         font-size: 1.12rem;
         margin: 0 6.1rem;
+
     }
 
     }
 
     &__subtitle {
         @include mixins.font(AvenirNextDemi);
-        padding: 0 1.5rem;
-        margin: 0 1.1rem;
 
-        @include mixins.tablet {
-            
-            margin: 0 6.0rem;
+        @include mixins.tablet {    
+            font-size: 1.12rem;
+            margin: 0 6.1rem;
         }
     }
 
     &__text {
-        padding: 0.25rem 1.5rem;
         line-height: 1.5rem;
-        margin: 0 1.1rem;
+
 
         @include mixins.font(AvenirNextRegular);
 
@@ -243,6 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .gallery {
     background-color: variables.$alabaster;
+    padding: 1.5rem 1rem 1rem 1rem;
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -256,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &__photo {
-        width: 80vw;
+        width: 100%;
         padding-bottom: 1rem;
 
         @include mixins.tablet {
@@ -270,10 +268,37 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.div-image {
+    display: flex;
+    align-items: center;
+}
+
+.div-comments {
+    border-bottom: 1px solid variables.$mercury;
+    padding-bottom: 1rem;
+}
+
+.div-image img {
+    border-radius: 50%;
+  }
+
 .comment {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 2rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include mixins.tablet {
+            width: 60%;
+        }
+    }
 
     &__area {
         display: flex;
@@ -283,6 +308,39 @@ h1, h2, h3, h4, h5, h6 {
         display: flex;
         flex-direction: row;
     }
+    
+    &__form label {
+        @include mixins.font(AvenirNextRegular);
+        color: variables.$silver;
+    }
+
+    &__form input[type="text"] {
+        @include mixins.font(AvenirNextRegular);
+        border: 1px solid variables.$silver;
+        border-radius: 3px;
+        padding: 0.9rem;
+        background-color: variables.$alabaster;
+        
+    }
+
+    &__form textarea[id="comment"] {
+        @include mixins.font(AvenirNextRegular);
+        border: 1px solid variables.$silver;
+        background-color: variables.$alabaster;
+        border-radius: 3px;
+        padding: 0.9rem;
+        color:variables.$bandsite-black;
+    }
+
+    &__form textarea::placeholder {
+        color:variables.$bandsite-black;
+        @include mixins.font(AvenirNextRegular);
+      }
+
+      &__form input::placeholder {
+        color:variables.$bandsite-black;
+        @include mixins.font(AvenirNextRegular);
+      }
 
     &__profile {
         width: 100%; 
@@ -293,11 +351,15 @@ h1, h2, h3, h4, h5, h6 {
 
     &__title {
         @include mixins.font(AvenirNextDemi);
+        font-size: 2rem;
+        
     }
 
     &__wrapper {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: 100%;
 
         &--round {
             display: inline-block;
@@ -308,15 +370,70 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    
+    &__comment {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 1.5rem;
+        
+        &__photo {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1.5rem;
 
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
 
+        &__text {
+            display: flex;
+            flex-direction: column;
+
+            &__header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                h3 {
+                    @include mixins.font(AvenirNextRegular);
+                    font-size: 1.6rem;
+                    color: variables.$bandsite-black;
+                    margin: 0;
+                }
+
+                p {
+                    @include mixins.font(AvenirNextRegular);
+                    font-size: 1.4rem;
+                    color: variables.$silver;
+                    margin: 0;
+                }
+            }
+
+            &__body {
+                @include mixins.font(AvenirNextRegular);
+                font-size: 1.6rem;
+                color: variables.$bandsite-black;
+                margin-top: 1.5rem;
+            }
+        }
+    }
 }
+
+  
 
 .footer {
 
     background-color: variables.$bandsite-black;
     padding: 1rem;
+
+    
 
     &__wrapper {
     display: flex;
@@ -368,9 +485,12 @@ h1, h2, h3, h4, h5, h6 {
 
     &__title {
         text-transform: capitalize;
+        padding: 1rem 1rem;
         color: variables.$white;
         @include mixins.font(AvenirNextBold);
     }
+
+    
 
     &__social-icon {
         width: 2rem;
@@ -393,7 +513,6 @@ h1, h2, h3, h4, h5, h6 {
         @include mixins.tablet {
         display: flex;
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
         right: 1.5rem;
 
@@ -406,6 +525,5 @@ h1, h2, h3, h4, h5, h6 {
         @include mixins.font(AvenirNextRegular);
     }
 }
-
 
 

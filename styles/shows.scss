@@ -67,6 +67,7 @@ p {
         display: flex;
         list-style: none;
         width: 100%;
+        height: 100%;
         justify-content: center;
         align-items: center;
 
@@ -78,12 +79,12 @@ p {
 
     &__nav-item {
         width: 100%;
+        height: 100%;
         text-align: center;
-        padding: 0.7rem 0;
+        padding: 1rem;
 
         @include mixins.tablet {
-            margin-right: 4rem;
-            padding: 1rem 0;
+            padding: 2.5rem;
         }
     }
 
@@ -94,6 +95,7 @@ p {
 
     &__nav-link {
         color:variables.$white;
+        height: 100%;
         @include mixins.font(AvenirNextDemi);
     }
 
@@ -102,13 +104,12 @@ p {
 .active {
     border-bottom: 4px solid variables.$white;
     @include mixins.font(AvenirNextBold);
+
 }
 
 .inactive {
     color: variables.$mercury;
 }
-
-
 
 
 
@@ -195,73 +196,201 @@ p {
   }
 
   
-  .shows__title {
-    font-size: 24px;
-    padding: 0.8rem;
+  .shows {
+
+    .shows__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+
+    }
+
+    .shows__table {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 0;
+
+        @include mixins.desktop {
+          justify-content: space-between;
+        }
+
+        .shows__heading {
+            display: none;
+
+            @include mixins.tablet {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        
+            .shows__field--date {
+              width: 32.3%;
+              color: variables.$mercury;
+              @include mixins.font(AvenirNextRegular);
+              font-size: 1rem;
+              text-align: left;
+            }
+        
+            .shows__field--venue {
+              width: 31.3%;
+              color: variables.$mercury;
+              @include mixins.font(AvenirNextRegular);
+              font-size: 1rem;
+              text-align: left;
+            }
+        
+            .shows__field--location {
+              width: 56.66%;
+              color: variables.$mercury;
+              @include mixins.font(AvenirNextRegular);
+              font-size: 1rem;
+              text-align: left;
+            }
+            }
+          }
+    }
+    
+    &__title {
+      font-size: 2rem;
+      padding: 2rem;
+      @include mixins.font(AvenirNextRegular);
+
+
+    }
+
+
+    &__one-container {
+      border-bottom: 1px solid variables.$mercury;
+      padding: 2rem;
+
+      @include mixins.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+    }
+  
+    &__container-all {
+      display: flex;
+      flex-direction: column;
+
+      @include mixins.desktop {
+        flex-direction: row;
+      }
+    }
+  
+  
+    &__header-cell {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
+      text-align: left;
+    }
+  
+    &__header-cell--date {
+      flex-basis: 33.33%;
+    }
+  
+    &__header-cell--venue {
+      flex-basis: 33.33%;
+    }
+  
+    &__header-cell--location {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell {
+      padding: 10px;
+    }
+  
+    &__cell--date {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell--venue {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell--location {
+      flex-basis: 33.33%;
+    }
+  
+    &__cell--button {
+      text-align: center;
+    }
+
+    &__table-container {
+      @include mixins.desktop {
+        width: 100vw;
+      }
+    }
+
+    &__title-container {
+      @include mixins.desktop {
+        width: 10%;
+      }
+    }
+  
+    &__date-container,
+    &__venue-container,
+    &__location-container,
+    &__button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      
+    }
+  
+    &__date-header,
+    &__venue-header,
+    &__location-header {
+      @include mixins.font(AvenirNextRegular);
+      flex-basis: 100%;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      color: variables.$mercury;
+
+      @include mixins.tablet {
+        display: none;
+      }
+    }
+    
+  
+    &__venue,
+    &__location {
+        @include mixins.font(AvenirNextRegular);
+      flex-basis: 100%;
+      font-size: 1rem;
+    }
+
+    &__date {
+        @include mixins.font(AvenirNextBold);
+        font-size: 1rem;
+    }
+  
+    &__button {
+      background-color: variables.$bandsite-black;
+      color: variables.$white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      width: 100%;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
   }
   
-  .shows__table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  .shows__table {
-    padding: 2.5rem;
-  }
-  
-  .shows__header-cell {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .shows__header-cell--date {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__header-cell--venue {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__header-cell--location {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell {
-    padding: 10px;
-  }
-  
-  .shows__cell--date {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell--venue {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell--location {
-    flex-basis: 33.33%;
-  }
-  
-  .shows__cell--button {
-    text-align: center;
-  }
-  
-  .shows__button {
-    background-color: variables.$bandsite-black;
-    color: variables.$white;
-    border: none;
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
   
   
 
@@ -269,6 +398,8 @@ p {
 
     background-color: variables.$bandsite-black;
     padding: 1rem;
+
+    
 
     &__wrapper {
     display: flex;
@@ -320,9 +451,12 @@ p {
 
     &__title {
         text-transform: capitalize;
+        padding: 1rem 1rem;
         color: variables.$white;
         @include mixins.font(AvenirNextBold);
     }
+
+    
 
     &__social-icon {
         width: 2rem;
@@ -345,7 +479,6 @@ p {
         @include mixins.tablet {
         display: flex;
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
         right: 1.5rem;
 

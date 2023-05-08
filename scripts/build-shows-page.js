@@ -1,97 +1,113 @@
-const shows = [
-    {
-      date: "Mon Sept 06 2021",
-      venue: "Ronald Lane",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Tue Sept 21 2021",
-      venue: "Pier 3 East",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Fri Oct 15 2021",
-      venue: "View Lounge",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Sat Nov 06 2021",
-      venue: "Hyatt Agency",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Fri Nov 26 2021",
-      venue: "Moscow Center",
-      location: "San Francisco, CA"
-    },
-    {
-      date: "Wed Dec 15 2021",
-      venue: "Press Club",
-      location: "San Francisco, CA"
-    }
-  ];
-  
-  const renderShowsTable = (shows) => {
-    const showsContainer = document.querySelector(".shows");
-  
-    const title = document.createElement("h1");
-    title.classList.add("shows__title");
-    title.innerText = "Shows";
-    showsContainer.appendChild(title);
-  
-    const table = document.createElement("table");
-    table.classList.add("shows__table");
-    showsContainer.appendChild(table);
-  
-    const headerRow = document.createElement("tr");
-    headerRow.classList.add("shows__header-row");
-    table.appendChild(headerRow);
-  
-    const dateHeader = document.createElement("th");
-    dateHeader.classList.add("shows__header-cell", "shows__header-cell--date");
-    dateHeader.innerText = "Date";
-    headerRow.appendChild(dateHeader);
-  
-    const venueHeader = document.createElement("th");
-    venueHeader.classList.add("shows__header-cell", "shows__header-cell--venue");
-    venueHeader.innerText = "Venue";
-    headerRow.appendChild(venueHeader);
-  
-    const locationHeader = document.createElement("th");
-    locationHeader.classList.add("shows__header-cell", "shows__header-cell--location");
-    locationHeader.innerText = "Location";
-    headerRow.appendChild(locationHeader);
-  
-    shows.forEach((show) => {
-      const row = document.createElement("tr");
-      row.classList.add("shows__row");
-      table.appendChild(row);
-  
-      const dateCell = document.createElement("td");
-      dateCell.classList.add("shows__cell", "shows__cell--date");
-      dateCell.innerText = show.date;
-      row.appendChild(dateCell);
-  
-      const venueCell = document.createElement("td");
-      venueCell.classList.add("shows__cell", "shows__cell--venue");
-      venueCell.innerText = show.venue;
-      row.appendChild(venueCell);
-  
-      const locationCell = document.createElement("td");
-      locationCell.classList.add("shows__cell", "shows__cell--location");
-      locationCell.innerText = show.location;
-      row.appendChild(locationCell);
-  
-      const buttonCell = document.createElement("td");
-      buttonCell.classList.add("shows__cell", "shows__cell--button");
-      row.appendChild(buttonCell);
-  
-      const button = document.createElement("button");
-      button.classList.add("shows__button");
-      button.innerText = "Buy Tickets";
-      buttonCell.appendChild(button);
-    });
-  };
-  
-  renderShowsTable(shows);
-  
+renderShowsTable = (shows) => {
+  const showsContainer = document.querySelector(".shows__container-all");
+
+  const titleContainer = document.createElement("div");
+  titleContainer.classList.add("shows__title-container");
+  showsContainer.appendChild(titleContainer);
+
+  const title = document.createElement("h1");
+  title.classList.add("shows__title");
+  title.innerText = "Shows";
+  titleContainer.appendChild(title);
+
+  const tableContainer = document.createElement("div");
+  tableContainer.classList.add("shows__table-container");
+  showsContainer.appendChild(tableContainer);
+
+  const table = document.createElement("div");
+  table.classList.add("shows__table");
+  tableContainer.appendChild(table);
+
+  const heading = document.createElement("div");
+  heading.classList.add("shows__heading");
+  table.appendChild(heading);
+
+  const headingRow = document.createElement("div");
+  headingRow.classList.add("shows__row");
+  heading.appendChild(headingRow);
+
+  const dateHeader = document.createElement("span");
+  dateHeader.classList.add("shows__field--date");
+  dateHeader.innerText = "Date";
+  headingRow.appendChild(dateHeader);
+
+  const venueHeader = document.createElement("span");
+  venueHeader.classList.add("shows__field--venue");
+  venueHeader.innerText = "Venue";
+  headingRow.appendChild(venueHeader);
+
+  const locationHeader = document.createElement("span");
+  locationHeader.classList.add("shows__field--location");
+  locationHeader.innerText = "Location";
+  headingRow.appendChild(locationHeader);
+
+
+  shows.forEach((show) => {
+    const oneContainer = document.createElement("div");
+    oneContainer.classList.add("shows__one-container");
+    table.appendChild(oneContainer);
+
+    const dateContainer = document.createElement("div");
+    dateContainer.classList.add("shows__date-container");
+    oneContainer.appendChild(dateContainer);
+
+    const dateHeader = document.createElement("h3");
+    dateHeader.classList.add("shows__date-header");
+    dateHeader.innerText = "DATE";
+    dateContainer.appendChild(dateHeader);
+
+    const date = document.createElement("p");
+    date.classList.add("shows__date");
+    const dateObj = new Date(show.date);
+    date.innerText = dateObj.toLocaleDateString();
+    dateContainer.appendChild(date);
+
+    const venueContainer = document.createElement("div");
+    venueContainer.classList.add("shows__venue-container");
+    oneContainer.appendChild(venueContainer);
+
+    const venueHeader = document.createElement("h3");
+    venueHeader.classList.add("shows__venue-header");
+    venueHeader.innerText = "VENUE";
+    venueContainer.appendChild(venueHeader);
+
+    const venue = document.createElement("p");
+    venue.classList.add("shows__venue");
+    venue.innerText = show.place;
+    venueContainer.appendChild(venue);
+
+    const locationContainer = document.createElement("div");
+    locationContainer.classList.add("shows__location-container");
+    oneContainer.appendChild(locationContainer);
+
+    const locationHeader = document.createElement("h3");
+    locationHeader.classList.add("shows__location-header");
+    locationHeader.innerText = "LOCATION";
+    locationContainer.appendChild(locationHeader);
+
+    const location = document.createElement("p");
+    location.classList.add("shows__location");
+    location.innerText = show.location;
+    locationContainer.appendChild(location);
+
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("shows__button-container");
+    oneContainer.appendChild(buttonContainer);
+
+    const button = document.createElement("button");
+    button.classList.add("shows__button");
+    button.innerText = "BUY TICKETS";
+    buttonContainer.appendChild(button);
+  });
+};
+
+const showApi = axios.get(
+  "https://project-1-api.herokuapp.com/showdates?api_key=dilpreetbandsite"
+);
+showApi.then((response) => {
+  renderShowsTable(response.data);
+  console.log(response.data);
+});
+showApi.catch((error) => {
+  console.log("Woops: " + error.message);
+});

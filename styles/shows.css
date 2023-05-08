@@ -66,6 +66,7 @@ p {
   display: flex;
   list-style: none;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -76,13 +77,13 @@ p {
 }
 .site-header__nav-item {
   width: 100%;
+  height: 100%;
   text-align: center;
-  padding: 0.7rem 0;
+  padding: 1rem;
 }
 @media (min-width: 768px) {
   .site-header__nav-item {
-    margin-right: 4rem;
-    padding: 1rem 0;
+    padding: 2.5rem;
   }
 }
 .site-header__nav-item:hover {
@@ -90,6 +91,7 @@ p {
 }
 .site-header__nav-link {
   color: #ffffff;
+  height: 100%;
   font-family: AvenirNextDemi, sans-serif;
 }
 
@@ -163,60 +165,148 @@ p {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.shows__title {
-  font-size: 24px;
-  padding: 0.8rem;
-}
-
-.shows__table {
+.shows .shows__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+  padding: 2rem;
 }
-
-.shows__table {
-  padding: 2.5rem;
+.shows .shows__table {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
 }
-
+@media (min-width: 1280px) {
+  .shows .shows__table {
+    justify-content: space-between;
+  }
+}
+.shows .shows__table .shows__heading {
+  display: none;
+}
+@media (min-width: 768px) {
+  .shows .shows__table .shows__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .shows .shows__table .shows__heading .shows__field--date {
+    width: 32.3%;
+    color: #E1E1E1;
+    font-family: AvenirNextRegular, sans-serif;
+    font-size: 1rem;
+    text-align: left;
+  }
+  .shows .shows__table .shows__heading .shows__field--venue {
+    width: 31.3%;
+    color: #E1E1E1;
+    font-family: AvenirNextRegular, sans-serif;
+    font-size: 1rem;
+    text-align: left;
+  }
+  .shows .shows__table .shows__heading .shows__field--location {
+    width: 56.66%;
+    color: #E1E1E1;
+    font-family: AvenirNextRegular, sans-serif;
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+.shows__title {
+  font-size: 2rem;
+  padding: 2rem;
+  font-family: AvenirNextRegular, sans-serif;
+}
+.shows__one-container {
+  border-bottom: 1px solid #E1E1E1;
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  .shows__one-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+.shows__container-all {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1280px) {
+  .shows__container-all {
+    flex-direction: row;
+  }
+}
 .shows__header-cell {
   font-size: 18px;
   font-weight: bold;
   padding: 10px;
   text-align: left;
 }
-
 .shows__header-cell--date {
   flex-basis: 33.33%;
 }
-
 .shows__header-cell--venue {
   flex-basis: 33.33%;
 }
-
 .shows__header-cell--location {
   flex-basis: 33.33%;
 }
-
 .shows__cell {
   padding: 10px;
 }
-
 .shows__cell--date {
   flex-basis: 33.33%;
 }
-
 .shows__cell--venue {
   flex-basis: 33.33%;
 }
-
 .shows__cell--location {
   flex-basis: 33.33%;
 }
-
 .shows__cell--button {
   text-align: center;
 }
-
+@media (min-width: 1280px) {
+  .shows__table-container {
+    width: 100vw;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__title-container {
+    width: 10%;
+  }
+}
+.shows__date-container, .shows__venue-container, .shows__location-container, .shows__button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.shows__date-header, .shows__venue-header, .shows__location-header {
+  font-family: AvenirNextRegular, sans-serif;
+  flex-basis: 100%;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .shows__date-header, .shows__venue-header, .shows__location-header {
+    display: none;
+  }
+}
+.shows__venue, .shows__location {
+  font-family: AvenirNextRegular, sans-serif;
+  flex-basis: 100%;
+  font-size: 1rem;
+}
+.shows__date {
+  font-family: AvenirNextBold, sans-serif;
+  font-size: 1rem;
+}
 .shows__button {
   background-color: #323232;
   color: #ffffff;
@@ -225,8 +315,11 @@ p {
   padding: 10px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  width: 100%;
   margin: 4px 2px;
   cursor: pointer;
 }
@@ -276,6 +369,7 @@ p {
 }
 .footer__title {
   text-transform: capitalize;
+  padding: 1rem 1rem;
   color: #ffffff;
   font-family: AvenirNextBold, sans-serif;
 }
@@ -300,7 +394,6 @@ p {
   .footer__top-logo {
     display: flex;
     position: absolute;
-    top: 50%;
     transform: translateY(-50%);
     right: 1.5rem;
   }

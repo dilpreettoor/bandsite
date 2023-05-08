@@ -359,7 +359,9 @@
 .footer {
 
     background-color: variables.$bandsite-black;
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1rem;
+
+    
 
     &__wrapper {
     display: flex;
@@ -391,29 +393,32 @@
     }
 
     &__sub-wrapper-top {
-        
+        padding: 0.25rem 1rem;
     }
 
     &__sub-wrapper-middle {
-        
+        padding: 1.25rem 1rem;
     }
 
     &__sub-wrapper-bottom {
-        
+        padding: 0.25rem 1rem;
     }
 
 
     &__social {
         display: flex;
         column-gap: 2rem;
-        ;
+        padding: 1rem 1rem;
     }
 
     &__title {
         text-transform: capitalize;
+        padding: 1rem 1rem;
         color: variables.$white;
         @include mixins.font(AvenirNextBold);
     }
+
+    
 
     &__social-icon {
         width: 2rem;
@@ -436,7 +441,6 @@
         @include mixins.tablet {
         display: flex;
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
         right: 1.5rem;
 
@@ -445,9 +449,9 @@
 
     &__copyright-text {
         color: variables.$alabaster;
+        padding: 1rem 1rem;
         @include mixins.font(AvenirNextRegular);
     }
 }
-
 
 

@@ -315,7 +315,7 @@
 
 .footer {
   background-color: #323232;
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 1rem;
 }
 .footer__wrapper {
   display: flex;
@@ -341,13 +341,24 @@
   color: #FAFAFA;
   font-family: AvenirNextRegular, sans-serif;
 }
+.footer__sub-wrapper-top {
+  padding: 0.25rem 1rem;
+}
+.footer__sub-wrapper-middle {
+  padding: 1.25rem 1rem;
+}
+.footer__sub-wrapper-bottom {
+  padding: 0.25rem 1rem;
+}
 .footer__social {
   display: flex;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
+  padding: 1rem 1rem;
 }
 .footer__title {
   text-transform: capitalize;
+  padding: 1rem 1rem;
   color: #ffffff;
   font-family: AvenirNextBold, sans-serif;
 }
@@ -372,12 +383,12 @@
   .footer__top-logo {
     display: flex;
     position: absolute;
-    top: 50%;
     transform: translateY(-50%);
     right: 1.5rem;
   }
 }
 .footer__copyright-text {
   color: #FAFAFA;
+  padding: 1rem 1rem;
   font-family: AvenirNextRegular, sans-serif;
 }/*# sourceMappingURL=bio.css.map */

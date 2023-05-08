@@ -3,6 +3,7 @@
 const showComments = (comment) => {
   let commentDiv = document.createElement("div");
   let commentTop = document.createElement("div");
+  commentTop.classList.add("div-comments");
   let nameDiv = document.createElement("div");
   nameDiv.classList.add("div-image");
   let image = document.createElement("img");

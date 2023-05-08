@@ -273,6 +273,11 @@
     align-items: center;
 }
 
+.div-comments {
+    border-bottom: 1px solid variables.$mercury;
+    padding-bottom: 1rem;
+}
+
 .div-image img {
     border-radius: 50%;
   }
